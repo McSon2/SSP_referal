@@ -16,7 +16,7 @@ jobs:
       - name: Get latest release asset URLs
         id: get_urls
         run: |
-          RESPONSE=$(curl -s https://api.github.com/repos/McSon2/SSP/releases/latest)
+          RESPONSE=$(curl -s https://api.github.com/repos/McSon2/SSP_referal/releases/latest)
           WINDOWS_URL=$(echo "$RESPONSE" | grep browser_download_url | grep .exe | head -n 1 | cut -d '"' -f 4)
           MAC_URL=$(echo "$RESPONSE" | grep browser_download_url | grep .dmg | head -n 1 | cut -d '"' -f 4)
           echo "WINDOWS_URL=$WINDOWS_URL" >> $GITHUB_ENV
